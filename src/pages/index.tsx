@@ -3,8 +3,10 @@ import Image from "next/image";
 import styles from "/styles/Home.module.css";
 
 type Props = {
-  title: String;
+  title: string;
 };
+
+const foo = "bla";
 
 export default function Home({ title = "Alden Fachetti" }: Props) {
   return (
