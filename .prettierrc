@@ -1,8 +1,5 @@
 {
-  //comma at the end of the line
   "trailingComma": "none",
-  //semicolon after assigning a variable or after importing an object
   "semi": false,
-  //instead of writing with double quotes ("") I prefer to use single quotes (''), if necessary, I use double quotes
   "singleQuote": true
 }
