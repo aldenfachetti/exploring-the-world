@@ -3,7 +3,7 @@
   "short_name": "Merlin",
   "icons": [
     {
-      "src": "/public/img/icon-man-mage-96.png",
+      "src": "/img/icon-man-mage-96.png",
       "type": "image/png",
       "sizes": "96x96"
     }
