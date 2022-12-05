@@ -1,0 +1,16 @@
+{
+  "name": "Alden Merlin",
+  "short_name": "Merlin",
+  "icons": [
+    {
+      "src": "/public/img/icon-man-mage-96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    }
+  ],
+  "background_color": "#06092B",
+  "description": "Wonderful historical places that I hope to visit one day in this big world. 🌎",
+  "display": "fullscreen",
+  "start_url": "/",
+  "theme_color": "#06092B"
+}

@@ -1,9 +1,74 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Main /> should render the heading 1`] = `
-<main>
-  <h1>
-    Exploring the World
+.c0 {
+  background-color: #06092b;
+  color: #ffffff;
+  width: 100%;
+  height: 100%;
+  padding: 3rem;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c3 {
+  width: 26rem;
+  margin-bottom: -4rem;
+  margin-left: 7rem;
+  z-index: 1;
+  opacity: 0.8;
+}
+
+.c1 {
+  font-size: 2.5rem;
+}
+
+.c2 {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.c4 {
+  width: min(27rem,100%);
+  margin-top: -5rem;
+}
+
+<main
+  class="c0"
+>
+  <h1
+    class="c1"
+  >
+    🧙‍♂️ Merlin 🧙‍♂️
   </h1>
+  <h2
+    class="c2"
+  >
+    🌎 Discover the history places in the world 🌎
+  </h2>
+  <img
+    alt="Imagem ilustrativa de um ovni."
+    class="c3"
+    src="/img/logo.png"
+  />
+  <img
+    alt="Imagem ilustrativa de uma barraca no campo com o logo do ReactJS sendo abduzido."
+    class="c4"
+    src="/img/hero-illustration.png"
+  />
 </main>
 `
