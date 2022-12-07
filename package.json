@@ -13,12 +13,12 @@
   },
   "lint-staged": {
     "src/**/*": [
-      "yarn lint --fix",
-      "yarn test --findRelatedTests --bail"
+      "yarn lint --fix"
     ]
   },
   "dependencies": {
     "@styled-icons/bootstrap": "^10.46.0",
+    "@styled-icons/ionicons-outline": "^10.46.0",
     "leaflet": "1.7.1",
     "next": "13.0.6",
     "next-pwa": "5.5.4",
