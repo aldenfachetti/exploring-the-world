@@ -38,5 +38,7 @@ describe('<Map />', () => {
 
     expect(screen.getByTitle(/petrópolis/i)).toBeInTheDocument()
     expect(screen.getByTitle(/reykjavik/i)).toBeInTheDocument()
+
+    // screen.logTestingPlaygroundURL()
   })
 })
