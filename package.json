@@ -12,7 +12,7 @@
     "test:watch": "yarn test --watch"
   },
   "lint-staged": {
-    "src/**/*.tsx": [
+    "src/**/*": [
       "yarn lint --fix",
       "yarn test --findRelatedTests --bail"
     ]
