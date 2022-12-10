@@ -2,7 +2,7 @@ import { GetStaticProps } from 'next'
 import client from 'graphql/client'
 import { GET_PLACES, GET_PLACE_BY_SLUG } from 'graphql/queries'
 import { useRouter } from 'next/dist/client/router'
-import { GetPlacesQuery, GetPlaceBySlugQuery } from 'gql/graphql'
+import { GetPlacesQuery, GetPlaceBySlugQuery } from 'graphql/generated/graphql'
 import PlacesTemplate, { PlacesTemplateProps } from 'templates/Places'
 
 export default function Place({ place }: PlacesTemplateProps) {

@@ -4136,7 +4136,9 @@ export type GetPageBySlugQuery = {
   } | null
 }
 
-export type GetPlacesQueryVariables = Exact<{ [key: string]: never }>
+export type GetPlacesQueryVariables = Exact<{
+  first?: InputMaybe<Scalars['Int']>
+}>
 
 export type GetPlacesQuery = {
   __typename?: 'Query'
@@ -4154,6 +4156,28 @@ export type GetPlacesQuery = {
       width?: number | null
     }>
   }>
+}
+
+export type GetPlaceBySlugQueryVariables = Exact<{
+  slug: Scalars['String']
+}>
+
+export type GetPlaceBySlugQuery = {
+  __typename?: 'Query'
+  place?: {
+    __typename?: 'Place'
+    id: string
+    slug: string
+    name: string
+    location: { __typename?: 'Location'; latitude: number; longitude: number }
+    description?: { __typename?: 'RichText'; html: string } | null
+    gallery: Array<{
+      __typename?: 'Asset'
+      url: string
+      height?: number | null
+      width?: number | null
+    }>
+  } | null
 }
 
 export const GetPagesDocument = {
@@ -4286,12 +4310,32 @@ export const GetPlacesDocument = {
       kind: 'OperationDefinition',
       operation: 'query',
       name: { kind: 'Name', value: 'getPlaces' },
+      variableDefinitions: [
+        {
+          kind: 'VariableDefinition',
+          variable: {
+            kind: 'Variable',
+            name: { kind: 'Name', value: 'first' }
+          },
+          type: { kind: 'NamedType', name: { kind: 'Name', value: 'Int' } }
+        }
+      ],
       selectionSet: {
         kind: 'SelectionSet',
         selections: [
           {
             kind: 'Field',
             name: { kind: 'Name', value: 'places' },
+            arguments: [
+              {
+                kind: 'Argument',
+                name: { kind: 'Name', value: 'first' },
+                value: {
+                  kind: 'Variable',
+                  name: { kind: 'Name', value: 'first' }
+                }
+              }
+            ],
             selectionSet: {
               kind: 'SelectionSet',
               selections: [
@@ -4348,6 +4392,104 @@ export const GetPlacesDocument = {
     }
   ]
 } as unknown as DocumentNode<GetPlacesQuery, GetPlacesQueryVariables>
+export const GetPlaceBySlugDocument = {
+  kind: 'Document',
+  definitions: [
+    {
+      kind: 'OperationDefinition',
+      operation: 'query',
+      name: { kind: 'Name', value: 'getPlaceBySlug' },
+      variableDefinitions: [
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'slug' } },
+          type: {
+            kind: 'NonNullType',
+            type: { kind: 'NamedType', name: { kind: 'Name', value: 'String' } }
+          }
+        }
+      ],
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'place' },
+            arguments: [
+              {
+                kind: 'Argument',
+                name: { kind: 'Name', value: 'where' },
+                value: {
+                  kind: 'ObjectValue',
+                  fields: [
+                    {
+                      kind: 'ObjectField',
+                      name: { kind: 'Name', value: 'slug' },
+                      value: {
+                        kind: 'Variable',
+                        name: { kind: 'Name', value: 'slug' }
+                      }
+                    }
+                  ]
+                }
+              }
+            ],
+            selectionSet: {
+              kind: 'SelectionSet',
+              selections: [
+                { kind: 'Field', name: { kind: 'Name', value: 'id' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'slug' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'name' } },
+                {
+                  kind: 'Field',
+                  name: { kind: 'Name', value: 'location' },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'Field',
+                        name: { kind: 'Name', value: 'latitude' }
+                      },
+                      {
+                        kind: 'Field',
+                        name: { kind: 'Name', value: 'longitude' }
+                      }
+                    ]
+                  }
+                },
+                {
+                  kind: 'Field',
+                  name: { kind: 'Name', value: 'description' },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      { kind: 'Field', name: { kind: 'Name', value: 'html' } }
+                    ]
+                  }
+                },
+                {
+                  kind: 'Field',
+                  name: { kind: 'Name', value: 'gallery' },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      { kind: 'Field', name: { kind: 'Name', value: 'url' } },
+                      {
+                        kind: 'Field',
+                        name: { kind: 'Name', value: 'height' }
+                      },
+                      { kind: 'Field', name: { kind: 'Name', value: 'width' } }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+} as unknown as DocumentNode<GetPlaceBySlugQuery, GetPlaceBySlugQueryVariables>
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: string
@@ -8473,7 +8615,9 @@ export type GetPageBySlugQuery = {
   } | null
 }
 
-export type GetPlacesQueryVariables = Exact<{ [key: string]: never }>
+export type GetPlacesQueryVariables = Exact<{
+  first?: InputMaybe<Scalars['Int']>
+}>
 
 export type GetPlacesQuery = {
   __typename?: 'Query'
@@ -8491,4 +8635,26 @@ export type GetPlacesQuery = {
       width?: number | null
     }>
   }>
+}
+
+export type GetPlaceBySlugQueryVariables = Exact<{
+  slug: Scalars['String']
+}>
+
+export type GetPlaceBySlugQuery = {
+  __typename?: 'Query'
+  place?: {
+    __typename?: 'Place'
+    id: string
+    slug: string
+    name: string
+    location: { __typename?: 'Location'; latitude: number; longitude: number }
+    description?: { __typename?: 'RichText'; html: string } | null
+    gallery: Array<{
+      __typename?: 'Asset'
+      url: string
+      height?: number | null
+      width?: number | null
+    }>
+  } | null
 }
