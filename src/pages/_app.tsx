@@ -21,7 +21,7 @@ function App({ Component, pageProps }: AppProps) {
         <meta name="theme-color" content="#06092B" />
         <meta
           name="description"
-          content="Wonderful historical places that I hope to visit one day in this big world. 🌎"
+          content="Wonderful historical places that I would like to visit in this big world. 🌎"
         />
       </Head>
       <GlobalStyles />
