@@ -22,7 +22,7 @@ export default function HomeTemplate({ places }: MapProps) {
             'Wonderful historical places that I would like to visit in this big world',
           images: [
             {
-              url: '../../../public/img/cover.png',
+              url: 'img/cover.png',
               width: 1280,
               height: 720,
               alt: 'Exploring the World'
