@@ -1,7 +1,6 @@
 import { AppProps } from 'next/app'
 import Head from 'next/head'
-
-import { Dna } from 'react-loader-spinner'
+import NextNprogress from 'nextjs-progressbar'
 
 import { DefaultSeo } from 'next-seo'
 import SEO from '../../next-seo.config'
@@ -29,13 +28,11 @@ function App({ Component, pageProps }: AppProps) {
       </Head>
       <DefaultSeo {...SEO} />
       <GlobalStyles />
-      <Dna
-        visible={true}
-        height="80"
-        width="80"
-        ariaLabel="dna-loading"
-        wrapperStyle={{}}
-        wrapperClass="dna-wrapper"
+      <NextNprogress
+        color="#f231a5"
+        startPosition={0.3}
+        stopDelayMs={200}
+        height={3}
       />
       <Component {...pageProps} />
     </>
