@@ -9,5 +9,8 @@ module.exports = withPWA({
   },
   images: {
     domains: ['media.graphassets.com']
+  },
+  typescript: {
+    ignoreBuildErrors: true
   }
 })

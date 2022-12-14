@@ -14,11 +14,11 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
   fields.push(
     {
-      loc: 'https://my-trips.willianjusten.com.br',
+      loc: 'https://www.exploring-the-world.aldenfachetti.com',
       lastmod: new Date().toISOString()
     },
     {
-      loc: 'https://my-trips.willianjusten.com.br/about',
+      loc: 'https://www.exploring-the-world.aldenfachetti.com/about',
       lastmod: new Date().toISOString()
     }
   )

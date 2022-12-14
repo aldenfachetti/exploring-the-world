@@ -4170,7 +4170,7 @@ export type GetPlaceBySlugQuery = {
     slug: string
     name: string
     location: { __typename?: 'Location'; latitude: number; longitude: number }
-    description?: { __typename?: 'RichText'; html: string } | null
+    description?: { __typename?: 'RichText'; html: string; text: string } | null
     gallery: Array<{
       __typename?: 'Asset'
       url: string
@@ -4463,7 +4463,8 @@ export const GetPlaceBySlugDocument = {
                   selectionSet: {
                     kind: 'SelectionSet',
                     selections: [
-                      { kind: 'Field', name: { kind: 'Name', value: 'html' } }
+                      { kind: 'Field', name: { kind: 'Name', value: 'html' } },
+                      { kind: 'Field', name: { kind: 'Name', value: 'text' } }
                     ]
                   }
                 },
@@ -8649,7 +8650,7 @@ export type GetPlaceBySlugQuery = {
     slug: string
     name: string
     location: { __typename?: 'Location'; latitude: number; longitude: number }
-    description?: { __typename?: 'RichText'; html: string } | null
+    description?: { __typename?: 'RichText'; html: string; text: string } | null
     gallery: Array<{
       __typename?: 'Asset'
       url: string

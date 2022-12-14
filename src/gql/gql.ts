@@ -19,7 +19,7 @@ const documents = {
     types.GetPageBySlugDocument,
   '\n  query getPlaces($first: Int) {\n    places(first: $first) {\n      id\n      slug\n      name\n      location {\n        latitude\n        longitude\n      }\n      description {\n        html\n      }\n      gallery {\n        url\n        height\n        width\n      }\n    }\n  }\n':
     types.GetPlacesDocument,
-  '\n  query getPlaceBySlug($slug: String!) {\n    place(where: { slug: $slug }) {\n      id\n      slug\n      name\n      location {\n        latitude\n        longitude\n      }\n      description {\n        html\n      }\n      gallery {\n        url\n        height\n        width\n      }\n    }\n  }\n':
+  '\n  query getPlaceBySlug($slug: String!) {\n    place(where: { slug: $slug }) {\n      id\n      slug\n      name\n      location {\n        latitude\n        longitude\n      }\n      description {\n        html\n        text\n      }\n      gallery {\n        url\n        height\n        width\n      }\n    }\n  }\n':
     types.GetPlaceBySlugDocument
 }
 
@@ -45,8 +45,8 @@ export function graphql(
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function graphql(
-  source: '\n  query getPlaceBySlug($slug: String!) {\n    place(where: { slug: $slug }) {\n      id\n      slug\n      name\n      location {\n        latitude\n        longitude\n      }\n      description {\n        html\n      }\n      gallery {\n        url\n        height\n        width\n      }\n    }\n  }\n'
-): typeof documents['\n  query getPlaceBySlug($slug: String!) {\n    place(where: { slug: $slug }) {\n      id\n      slug\n      name\n      location {\n        latitude\n        longitude\n      }\n      description {\n        html\n      }\n      gallery {\n        url\n        height\n        width\n      }\n    }\n  }\n']
+  source: '\n  query getPlaceBySlug($slug: String!) {\n    place(where: { slug: $slug }) {\n      id\n      slug\n      name\n      location {\n        latitude\n        longitude\n      }\n      description {\n        html\n        text\n      }\n      gallery {\n        url\n        height\n        width\n      }\n    }\n  }\n'
+): typeof documents['\n  query getPlaceBySlug($slug: String!) {\n    place(where: { slug: $slug }) {\n      id\n      slug\n      name\n      location {\n        latitude\n        longitude\n      }\n      description {\n        html\n        text\n      }\n      gallery {\n        url\n        height\n        width\n      }\n    }\n  }\n']
 
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
